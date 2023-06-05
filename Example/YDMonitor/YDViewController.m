@@ -7,6 +7,7 @@
 //
 
 #import "YDViewController.h"
+#import <YDLogger/YDLogger.h>
 
 @interface YDViewController ()
 
@@ -17,7 +18,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+}
+- (IBAction)showLogger:(id)sender {
+    YDLogListViewController *vc = [[YDLogListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

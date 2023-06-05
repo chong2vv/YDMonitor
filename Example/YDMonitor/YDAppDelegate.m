@@ -7,12 +7,20 @@
 //
 
 #import "YDAppDelegate.h"
+#import <YDMonitor/YDMonitor.h>
+#import <YDLogger/YDLogger.h>
 
 @implementation YDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[YDLogService shared] startLogNeedHook:YES];
+    [[YDMonitor shared] beginMonitor:^(NSDictionary * _Nonnull info) {
+        YDLogMonitorDetail(@"%@",info);
+    } cupInfo:^(NSDictionary * _Nonnull info) {
+        YDLogMonitorDetail(@"%@",info);
+    }];
+    
     return YES;
 }
 

@@ -4,7 +4,7 @@ platform :ios, '10.0'
 
 target 'YDMonitor_Example' do
   pod 'YDMonitor', :path => '../'
-
+  pod 'YDLogger', '0.2.1'
   target 'YDMonitor_Tests' do
     inherit! :search_paths
 
